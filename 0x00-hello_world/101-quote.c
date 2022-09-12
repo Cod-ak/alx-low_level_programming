@@ -1,14 +1,39 @@
-#include <stdio.h>                                                            
-#include <unistd.h>                                                           
-/**                                                                           
- * main - entry point                                                         
- *                                                                            
- * Description: prints and that piece..                                       
- *Return: 1 if sucessful                                                      
- */                                                                           
-int main(void)                                                                
-{                                                                             
-        write(2, "and that piece of art is useful\" - Dora Korpar, 2015-10-19\
-n", 59);                                                                      
-        return (1);                                                           
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+/**
+ * main - Entry point
+ *
+ * Return: Always 0 (Success)
+ */
+
+int main(void)
+{
+	int d, p, q;
+
+	for (d = '0'; d < '9'; d++)
+	{
+		for (p = d + 1; p <= '9'; p++)
+		{
+			for (q = p + 1; q <= '9'; q++)
+			{
+				if ((p != d) != q)
+				{
+					putchar(d);
+					putchar(p);
+					putchar(q);
+
+					if (d == '7' && p == '8')
+						continue;
+
+					putchar(',');
+					putchar(' ');
+				}
+			}
+		}
+	}
+	putchar('\n');
+
+	return (0);
 }
